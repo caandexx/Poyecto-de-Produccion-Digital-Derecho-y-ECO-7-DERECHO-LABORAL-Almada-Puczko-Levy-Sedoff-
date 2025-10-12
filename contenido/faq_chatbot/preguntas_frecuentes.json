@@ -1,0 +1,34 @@
+{
+  "faq_laboral": [
+    {
+      "pregunta": "¿Cuántas horas puedo trabajar por día?",
+      "respuesta": "Máximo 8 horas diarias o 48 horas semanales según el artículo 197 de la Ley de Contrato de Trabajo",
+      "tags": ["jornada", "horas", "límites"]
+    },
+    {
+      "pregunta": "¿Cómo se calculan las vacaciones?",
+      "respuesta": "Según antigüedad: 14 días hasta 5 años, 21 días hasta 10 años, 28 días más de 10 años. Artículo 150 LCT",
+      "tags": ["vacaciones", "derechos", "cálculo"]
+    },
+    {
+      "pregunta": "¿Qué es el aguinaldo y cuándo se paga?",
+      "respuesta": "Es el Sueldo Anual Complementario. Se paga en dos cuotas: mitad hasta el 30/06 y mitad hasta el 18/12. Artículo 122 LCT",
+      "tags": ["aguinaldo", "sueldo", "pagos"]
+    },
+    {
+      "pregunta": "¿Qué hago si tuve un accidente laboral?",
+      "respuesta": "1. Notificar al empleador inmediatamente. 2. Asistir a médico. 3. Contactar con la ART. 4. Realizar denuncia en SRT si es necesario",
+      "tags": ["accidente", "ART", "emergencia"]
+    },
+    {
+      "pregunta": "¿Pueden descontarme dinero del sueldo?",
+      "respuesta": "Solo descuentos legales: impuestos, aportes jubilatorios, embargos judiciales. Prohibidos descuentos por multas o pérdidas. Artículo 137 LCT",
+      "tags": ["descuentos", "sueldo", "prohibiciones"]
+    },
+    {
+      "pregunta": "¿Qué derechos tengo si trabajo desde casa?",
+      "respuesta": "Derecho a desconexión digital, compensación por gastos, equipamiento adecuado, y mismo salario que trabajo presencial. Ley 27.555",
+      "tags": ["teletrabajo", "derechos", "home office"]
+    }
+  ]
+}
