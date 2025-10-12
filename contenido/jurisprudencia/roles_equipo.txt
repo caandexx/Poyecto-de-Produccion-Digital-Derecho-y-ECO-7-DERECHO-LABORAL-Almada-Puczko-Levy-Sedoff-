@@ -1,0 +1,8 @@
+Definición de roles:
+Si bien cada integrante del grupo tendrá un rol principal asignado para mantener una estructura organizada y definir quién se enfoca principalmente en cada área, nuestra intención es trabajar de forma colaborativa y dinámica. Buscamos que todos podamos involucrarnos en distintas tareas del proyecto para avanzar de manera continua, sin depender de que una parte esté finalizada para comenzar con otra. De este modo, evitamos que algunos integrantes queden sin tareas en determinados momentos y fomentamos un trabajo más equilibrado, participativo y fluido entre todos.
+
+Candela Ayelén Almada: Programadora FrontEnd. Contenidista (Redacción).
+Catalina Peralta Levy: Diseñadora UI/UX. Contenidista (Presentación).
+María Florencia Pérez Gamberale: Programadora FrontEnd. Contenidista (Búsqueda).
+María Emilia Sedoff: Diseñadora UI/UX. Contenidista (Presentación).
+Matías Joaquín Rodriguez Puczko: Programador Backend. Contenidista (Búsqueda).
