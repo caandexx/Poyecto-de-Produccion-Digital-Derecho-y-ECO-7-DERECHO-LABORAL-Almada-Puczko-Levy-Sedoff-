@@ -21,8 +21,8 @@
             📚 Ver Contenido Jurídico
         </button>
         
-        <button class="btn" onclick="openChat()">
-            💬 Consultar al Chatbot
+        <button class="btn" onclick="location.href='{{ route('chatbot') }}'">
+            🤖 Consultar al Asistente Virtual
         </button>
         
         <button class="btn" onclick="location.href='{{ route('contacto') }}'">
@@ -32,16 +32,9 @@
 
     <!-- Indicador de chat -->
     <div style="text-align: center; margin-top: 30px; padding: 10px; background: #f1f5f9; border-radius: 8px;">
-        <small>💡 Chat disponible 24/7 para consultas laborales</small>
+        <small>💡 Asistente virtual disponible 24/7 para consultas laborales</small>
     </div>
 </div>
 @endsection
 
-@section('scripts')
-<script>
-function openChat() {
-    alert('🚀 Próximamente: Chatbot de consultas laborales');
-    // Aquí integraremos el chatbot después
-}
-</script>
-@endsection
+{{-- Scripts eliminados --}}

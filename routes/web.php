@@ -2,28 +2,27 @@
 
 use Illuminate\Support\Facades\Route;
 
-// Rutas con nombres definidos
+// Página de inicio
 Route::get('/', function () {
     return view('pages.home');
 })->name('home');
 
+// Página de contenido jurídico
 Route::get('/contenido', function () {
     return view('pages.contenido');
 })->name('contenido');
 
+// Página del ASISTENTE VIRTUAL (chatbot mejorado)
+Route::get('/chatbot', function () {
+    return view('pages.chatbot');
+})->name('chatbot');
+
+// Página de CONTACTO DIRECTO (solo formulario)
 Route::get('/contacto', function () {
     return view('pages.contacto');
 })->name('contacto');
 
-// Ruta de prueba simple
-Route::get('/test-simple', function () {
-    return "
-    <h1>✅ ¡Rutas funcionando!</h1>
-    <p>Ahora probá:</p>
-    <ul>
-        <li><a href='/'>Home</a></li>
-        <li><a href='/contenido'>Contenido</a></li>
-        <li><a href='/contacto'>Contacto</a></li>
-    </ul>
-    ";
-});
+// Ruta para procesar el formulario de contacto
+Route::post('/contacto/enviar', function () {
+    return redirect()->route('contacto')->with('success', 'Consulta enviada correctamente');
+})->name('contacto.enviar');

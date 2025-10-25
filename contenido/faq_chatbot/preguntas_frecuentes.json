@@ -29,6 +29,16 @@
       "pregunta": "¿Qué derechos tengo si trabajo desde casa?",
       "respuesta": "Derecho a desconexión digital, compensación por gastos, equipamiento adecuado, y mismo salario que trabajo presencial. Ley 27.555",
       "tags": ["teletrabajo", "derechos", "home office"]
+    },
+    {
+      "pregunta": "¿Cuánto me corresponde de indemnización por despido?",
+      "respuesta": "Depende de la antigüedad: 1 mes de salario por cada año trabajado, con tope de 3 salarios anuales. Artículo 245 LCT",
+      "tags": ["indemnización", "despido", "cálculo"]
+    },
+    {
+      "pregunta": "¿Puedo ser despedido estando de licencia médica?",
+      "respuesta": "No, está prohibido el despido durante licencia por enfermedad, embarazo, o accidente. Artículo 212 LCT",
+      "tags": ["despido", "licencia", "protección"]
     }
   ]
 }

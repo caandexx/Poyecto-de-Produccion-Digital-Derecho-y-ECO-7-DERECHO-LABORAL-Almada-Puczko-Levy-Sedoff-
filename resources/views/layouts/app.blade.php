@@ -38,10 +38,6 @@
         .btn-success {
             background-color: #10b981;
         }
-        
-        .btn:hover {
-            opacity: 0.9;
-        }
     </style>
 </head>
 <body>
