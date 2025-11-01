@@ -2,43 +2,91 @@
   "faq_laboral": [
     {
       "pregunta": "¿Cuántas horas puedo trabajar por día?",
-      "respuesta": "Máximo 8 horas diarias o 48 horas semanales según el artículo 197 de la Ley de Contrato de Trabajo",
-      "tags": ["jornada", "horas", "límites"]
+      "respuesta": "Máximo 8 horas diarias o 48 horas semanales según el artículo 197 de la Ley de Contrato de Trabajo. ¿Necesitás ayuda con horas extras no pagas? Te recomiendo nuestra **Guía de Horas Extras** en la sección de Contenido.",
+      "tags": ["jornada", "horas", "límites", "horario"],
+      "sugerencia_guia": "horas_extras"
     },
     {
       "pregunta": "¿Cómo se calculan las vacaciones?",
-      "respuesta": "Según antigüedad: 14 días hasta 5 años, 21 días hasta 10 años, 28 días más de 10 años. Artículo 150 LCT",
-      "tags": ["vacaciones", "derechos", "cálculo"]
+      "respuesta": "Según antigüedad: 14 días hasta 5 años, 21 días hasta 10 años, 28 días más de 10 años. Artículo 150 LCT. Para cálculos detallados, visitá nuestra sección de Contenido Jurídico.",
+      "tags": ["vacaciones", "derechos", "cálculo", "descanso"],
+      "sugerencia_guia": null
     },
     {
       "pregunta": "¿Qué es el aguinaldo y cuándo se paga?",
-      "respuesta": "Es el Sueldo Anual Complementario. Se paga en dos cuotas: mitad hasta el 30/06 y mitad hasta el 18/12. Artículo 122 LCT",
-      "tags": ["aguinaldo", "sueldo", "pagos"]
+      "respuesta": "Es el Sueldo Anual Complementario. Se paga en dos cuotas: mitad hasta el 30/06 y mitad hasta el 18/12. Artículo 122 LCT.",
+      "tags": ["aguinaldo", "sueldo", "pagos", "sac"],
+      "sugerencia_guia": null
     },
     {
       "pregunta": "¿Qué hago si tuve un accidente laboral?",
-      "respuesta": "1. Notificar al empleador inmediatamente. 2. Asistir a médico. 3. Contactar con la ART. 4. Realizar denuncia en SRT si es necesario",
-      "tags": ["accidente", "ART", "emergencia"]
+      "respuesta": "🚨 **Pasos urgentes**: 1. Atención médica inmediata 2. Notificar a empleador y ART 3. Denuncia en SRT. Te recomiendo nuestra **Guía Completa de Accidentes Laborales** con todos los detalles y contactos oficiales.",
+      "tags": ["accidente", "ART", "emergencia", "salud", "lesión"],
+      "sugerencia_guia": "accidente_laboral"
     },
     {
       "pregunta": "¿Pueden descontarme dinero del sueldo?",
-      "respuesta": "Solo descuentos legales: impuestos, aportes jubilatorios, embargos judiciales. Prohibidos descuentos por multas o pérdidas. Artículo 137 LCT",
-      "tags": ["descuentos", "sueldo", "prohibiciones"]
+      "respuesta": "Solo descuentos legales: impuestos, aportes jubilatorios, embargos judiciales. Prohibidos descuentos por multas o pérdidas. Artículo 137 LCT.",
+      "tags": ["descuentos", "sueldo", "prohibiciones", "pago"],
+      "sugerencia_guia": null
     },
     {
       "pregunta": "¿Qué derechos tengo si trabajo desde casa?",
-      "respuesta": "Derecho a desconexión digital, compensación por gastos, equipamiento adecuado, y mismo salario que trabajo presencial. Ley 27.555",
-      "tags": ["teletrabajo", "derechos", "home office"]
+      "respuesta": "Derecho a desconexión digital, compensación por gastos, equipamiento adecuado, y mismo salario que trabajo presencial. Ley 27.555.",
+      "tags": ["teletrabajo", "derechos", "home office", "remoto"],
+      "sugerencia_guia": null
     },
     {
       "pregunta": "¿Cuánto me corresponde de indemnización por despido?",
-      "respuesta": "Depende de la antigüedad: 1 mes de salario por cada año trabajado, con tope de 3 salarios anuales. Artículo 245 LCT",
-      "tags": ["indemnización", "despido", "cálculo"]
+      "respuesta": "💰 **Fórmula oficial**: 1 mes de salario × años trabajados (máximo 3 salarios anuales). Te recomiendo nuestra **Guía Completa de Despidos** con cálculo detallado, plazos y modelos de reclamo.",
+      "tags": ["indemnización", "despido", "cálculo", "liquidación"],
+      "sugerencia_guia": "despido"
     },
     {
       "pregunta": "¿Puedo ser despedido estando de licencia médica?",
-      "respuesta": "No, está prohibido el despido durante licencia por enfermedad, embarazo, o accidente. Artículo 212 LCT",
-      "tags": ["despido", "licencia", "protección"]
+      "respuesta": "No, está prohibido el despido durante licencia por enfermedad, embarazo, o accidente. Artículo 212 LCT. Si te pasó esto, consultá nuestra **Guía de Denuncias Laborales**.",
+      "tags": ["despido", "licencia", "protección", "enfermedad"],
+      "sugerencia_guia": "denuncia_laboral"
+    },
+    {
+      "pregunta": "¿Cómo hago una denuncia laboral?",
+      "respuesta": "⚖️ **Pasos**: 1. Reunir documentación 2. Denuncia online/presencial 3. Seguimiento expediente. Te recomiendo nuestra **Guía de Denuncias Laborales** con modelos, plazos y contactos oficiales.",
+      "tags": ["denuncia", "reclamo", "ministerio", "trámite"],
+      "sugerencia_guia": "denuncia_laboral"
+    },
+    {
+      "pregunta": "¿Qué hacer con horas extras no pagas?",
+      "respuesta": "⏰ **Derecho**: 50-100% recargo según horario. **Pasos**: 1. Registro personal 2. Notificación empleador 3. Denuncia ministerial. Consultá nuestra **Guía de Horas Extras** con cálculos y modelos.",
+      "tags": ["horas extras", "recargo", "jornada", "pago"],
+      "sugerencia_guia": "horas_extras"
+    },
+    {
+      "pregunta": "¿Dónde denuncio trabajo en negro?",
+      "respuesta": "En el Ministerio de Trabajo correspondiente a tu provincia. Te recomiendo nuestra **Guía de Denuncias Laborales** con todos los pasos, documentación necesaria y contactos oficiales.",
+      "tags": ["trabajo negro", "no registrado", "denuncia", "registración"],
+      "sugerencia_guia": "denuncia_laboral"
     }
-  ]
+  ],
+  "sugerencias_guias": {
+    "despido": {
+      "titulo": "🚨 Guía de Despido Laboral",
+      "descripcion": "Cálculo de indemnización, plazos legales, pasos inmediatos",
+      "enlace": "/contenido#guia-despido"
+    },
+    "accidente_laboral": {
+      "titulo": "🚑 Guía de Accidente Laboral", 
+      "descripcion": "Pasos urgentes, contacto ART, denuncia SRT, tratamientos",
+      "enlace": "/contenido#guia-accidente"
+    },
+    "denuncia_laboral": {
+      "titulo": "⚖️ Guía de Denuncia Laboral",
+      "descripcion": "Pasos para denunciar, documentación, plazos, conciliación",
+      "enlace": "/contenido#guia-denuncia"
+    },
+    "horas_extras": {
+      "titulo": "⏰ Guía de Horas Extras",
+      "descripcion": "Cálculo de recargos, cómo reclamar, pruebas necesarias",
+      "enlace": "/contenido#guia-horas-extras"
+    }
+  }
 }

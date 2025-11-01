@@ -78,7 +78,7 @@
 
 @section('scripts')
 <script>
-// Base de datos de preguntas y respuestas (será reemplazada por tu JSON)
+// Base de datos de preguntas y respuestas MEJORADA
 const faqDatabase = {!! json_encode(json_decode(file_get_contents(public_path('../contenido/faq_chatbot/preguntas_frecuentes.json')))) !!};
 
 // Cargar botones de preguntas rápidas al iniciar
@@ -90,29 +90,49 @@ function loadQuickQuestions() {
     const quickButtons = document.getElementById('quick-buttons');
     const questions = faqDatabase.faq_laboral;
     
-    // Mostrar solo las primeras 6 preguntas como botones rápidos
-    questions.slice(0, 6).forEach((faq, index) => {
+    // Mostrar preguntas como botones rápidos
+    questions.slice(0, 8).forEach((faq, index) => {
         const button = document.createElement('button');
         button.textContent = `❓ ${faq.pregunta}`;
         button.className = 'btn';
         button.style.cssText = 'font-size: 14px; padding: 10px 15px; margin: 4px; background: #f8fafc; color: #374151; border: 1px solid #e5e7eb; border-radius: 8px; cursor: pointer; flex: 1; min-width: 200px; text-align: left;';
-        button.onclick = () => askQuickQuestion(faq.pregunta, faq.respuesta);
+        button.onclick = () => askQuickQuestion(faq);
         quickButtons.appendChild(button);
     });
 }
 
-function askQuickQuestion(question, answer) {
+function askQuickQuestion(faq) {
     const chatMessages = document.getElementById('chat-messages');
     
     // Mensaje del usuario
     const userMessage = document.createElement('div');
-    userMessage.innerHTML = `<strong>👤 Tú:</strong> ${question}`;
+    userMessage.innerHTML = `<strong>👤 Tú:</strong> ${faq.pregunta}`;
     userMessage.style.cssText = 'background: #dbeafe; padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid #3b82f6;';
     chatMessages.appendChild(userMessage);
     
     // Respuesta del asistente
     const botMessage = document.createElement('div');
-    botMessage.innerHTML = `<strong>🤖 Asistente:</strong> ${answer}`;
+    let respuestaHTML = `<strong>🤖 Asistente:</strong> ${faq.respuesta}`;
+    
+    // Agregar sugerencia de guía si existe
+    if (faq.sugerencia_guia && faqDatabase.sugerencias_guias[faq.sugerencia_guia]) {
+        const guia = faqDatabase.sugerencias_guias[faq.sugerencia_guia];
+        respuestaHTML += `
+            <div style="margin-top: 15px; padding: 12px; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #2563eb;">
+                <strong>📚 Te recomiendo:</strong>
+                <div style="margin-top: 8px;">
+                    <strong>${guia.titulo}</strong><br>
+                    <small>${guia.descripcion}</small>
+                </div>
+                <button onclick="location.href='${guia.enlace}'" 
+                        style="margin-top: 10px; padding: 8px 16px; background: #2563eb; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px;">
+                    📖 Ver Guía Completa
+                </button>
+            </div>
+        `;
+    }
+    
+    botMessage.innerHTML = respuestaHTML;
     botMessage.style.cssText = 'background: white; padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid #10b981; box-shadow: 0 2px 4px rgba(0,0,0,0.05);';
     chatMessages.appendChild(botMessage);
     
@@ -138,11 +158,11 @@ function sendQuestion() {
     chatMessages.appendChild(userMessage);
     
     // Buscar respuesta en la base de datos
-    const answer = findBestAnswer(question);
+    const respuesta = findBestAnswer(question);
     
     // Respuesta del asistente
     const botMessage = document.createElement('div');
-    botMessage.innerHTML = `<strong>🤖 Asistente:</strong> ${answer}`;
+    botMessage.innerHTML = respuesta;
     botMessage.style.cssText = 'background: white; padding: 15px; border-radius: 12px; margin-bottom: 15px; border-left: 4px solid #10b981; box-shadow: 0 2px 4px rgba(0,0,0,0.05);';
     chatMessages.appendChild(botMessage);
     
@@ -157,8 +177,9 @@ function findBestAnswer(question) {
     
     // Buscar coincidencia exacta primero
     for (const faq of questions) {
-        if (lowerQuestion.includes(faq.pregunta.toLowerCase().replace('¿', '').replace('?', ''))) {
-            return faq.respuesta;
+        const preguntaLower = faq.pregunta.toLowerCase().replace('¿', '').replace('?', '');
+        if (lowerQuestion.includes(preguntaLower) || preguntaLower.includes(lowerQuestion)) {
+            return formatAnswer(faq);
         }
     }
     
@@ -166,39 +187,91 @@ function findBestAnswer(question) {
     for (const faq of questions) {
         for (const tag of faq.tags) {
             if (lowerQuestion.includes(tag.toLowerCase())) {
-                return faq.respuesta;
+                return formatAnswer(faq);
             }
         }
     }
     
-    // Buscar por palabras clave
-    const keywords = {
-        'hora': 'horas',
-        'trabaj': 'jornada',
+    // Búsqueda inteligente por palabras clave
+    const keywordMapping = {
+        'despido': 'despido',
+        'despedir': 'despido',
+        'indemnizacion': 'despido',
+        'liquidacion': 'despido',
+        'accidente': 'accidente_laboral',
+        'art': 'accidente_laboral',
+        'srt': 'accidente_laboral',
+        'lesion': 'accidente_laboral',
+        'denuncia': 'denuncia_laboral',
+        'denunciar': 'denuncia_laboral',
+        'reclamo': 'denuncia_laboral',
+        'ministerio': 'denuncia_laboral',
+        'hora extra': 'horas_extras',
+        'horario': 'horas_extras',
+        'recargo': 'horas_extras',
+        'trabajo negro': 'denuncia_laboral',
+        'no registrado': 'denuncia_laboral',
         'vacacion': 'vacaciones',
         'aguinaldo': 'aguinaldo',
+        'sac': 'aguinaldo',
         'sueldo': 'aguinaldo',
-        'accidente': 'accidente',
-        'descont': 'descuentos',
-        'casa': 'teletrabajo',
-        'remoto': 'teletrabajo',
-        'despido': 'indemnización',
-        'indemnizac': 'indemnización',
-        'licencia': 'protección'
+        'jornada': 'horas',
+        'horas': 'horas'
     };
     
-    for (const [key, category] of Object.entries(keywords)) {
-        if (lowerQuestion.includes(key)) {
+    for (const [keyword, category] of Object.entries(keywordMapping)) {
+        if (lowerQuestion.includes(keyword)) {
             for (const faq of questions) {
-                if (faq.tags.includes(category)) {
-                    return faq.respuesta;
+                if (faq.tags.includes(category) || faq.sugerencia_guia === category) {
+                    return formatAnswer(faq);
                 }
             }
         }
     }
     
-    // Respuesta por defecto
-    return 'Gracias por tu consulta. Te recomiendo revisar la sección de "Contenido Jurídico" para información más detallada. Si necesitas asesoramiento personalizado, podés usar nuestro <a href="{{ route("contacto") }}" style="color: #2563eb;">formulario de contacto</a>.';
+    // Respuesta por defecto mejorada
+    return `
+        <strong>🤖 Asistente:</strong> Gracias por tu consulta. Te recomiendo:
+        <br><br>
+        📚 <strong>Explorar nuestras Guías Prácticas:</strong>
+        <ul style="margin: 10px 0; padding-left: 20px;">
+            <li>🚨 <strong>Despido laboral</strong> - Cálculo de indemnización</li>
+            <li>🚑 <strong>Accidente laboral</strong> - Pasos urgentes y ART</li>
+            <li>⚖️ <strong>Denuncia laboral</strong> - Cómo reclamar tus derechos</li>
+            <li>⏰ <strong>Horas extras</strong> - Cálculo y reclamo</li>
+        </ul>
+        <br>
+        <button onclick="location.href='/contenido'" 
+                style="padding: 10px 20px; background: #2563eb; color: white; border: none; border-radius: 8px; cursor: pointer; font-size: 14px;">
+            📖 Ver Todas las Guías
+        </button>
+        <br><br>
+        O podés <a href="{{ route('contacto') }}" style="color: #2563eb;">completar el formulario de contacto</a> para consultas específicas.
+    `;
+}
+
+function formatAnswer(faq) {
+    let respuestaHTML = `<strong>🤖 Asistente:</strong> ${faq.respuesta}`;
+    
+    // Agregar sugerencia de guía si existe
+    if (faq.sugerencia_guia && faqDatabase.sugerencias_guias[faq.sugerencia_guia]) {
+        const guia = faqDatabase.sugerencias_guias[faq.sugerencia_guia];
+        respuestaHTML += `
+            <div style="margin-top: 15px; padding: 12px; background: #f0f9ff; border-radius: 8px; border-left: 4px solid #2563eb;">
+                <strong>📚 Te recomiendo:</strong>
+                <div style="margin-top: 8px;">
+                    <strong>${guia.titulo}</strong><br>
+                    <small>${guia.descripcion}</small>
+                </div>
+                <button onclick="location.href='${guia.enlace}'" 
+                        style="margin-top: 10px; padding: 8px 16px; background: #2563eb; color: white; border: none; border-radius: 6px; cursor: pointer; font-size: 14px;">
+                    📖 Ver Guía Completa
+                </button>
+            </div>
+        `;
+    }
+    
+    return respuestaHTML;
 }
 </script>
 @endsection
