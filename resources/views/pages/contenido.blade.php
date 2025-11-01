@@ -234,6 +234,9 @@
     <button class="btn" onclick="location.href='{{ route('home') }}'" style="margin-top: 10px;">
         ← Volver al Inicio
     </button>
+ <button class="btn" onclick="location.href='{{ route('directorio') }}'" style="margin-top: 10px;">
+        🏛️ Directorio Oficial
+    </button>
 </div>
 @endsection
 

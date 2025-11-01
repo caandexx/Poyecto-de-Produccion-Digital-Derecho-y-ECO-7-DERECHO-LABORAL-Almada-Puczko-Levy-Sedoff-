@@ -22,6 +22,11 @@ Route::get('/contacto', function () {
     return view('pages.contacto');
 })->name('contacto');
 
+// Página del DIRECTORIO OFICIAL (nueva)
+Route::get('/directorio', function () {
+    return view('pages.directorio');
+})->name('directorio');
+
 // Ruta para procesar el formulario de contacto
 Route::post('/contacto/enviar', function () {
     return redirect()->route('contacto')->with('success', 'Consulta enviada correctamente');
