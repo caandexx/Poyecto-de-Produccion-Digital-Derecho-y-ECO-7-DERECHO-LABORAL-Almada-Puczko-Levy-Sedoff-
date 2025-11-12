@@ -1,142 +1,257 @@
 @extends('layouts.app')
 
 @section('content')
-<!-- HERO SECTION MEJORADA -->
-<section class="gradient-box w-11/12 md:w-3/4 mt-8 py-16 px-6 text-center mx-auto">
-    <div class="inline-block bg-white/70 text-gray-800 text-sm font-semibold px-3 py-1 rounded-full mb-4 shadow-sm">
-        🚀 Herramienta educativa actualizada
+<!-- HERO SECTION ULTRA MEJORADA -->
+<section class="gradient-box w-11/12 md:w-3/4 mt-12 py-20 px-8 text-center mx-auto fade-in">
+    <div class="badge mb-6 inline-block">
+        🚀 Herramienta Educativa Premium
     </div>
-    <h1 class="text-4xl md:text-5xl font-bold mb-4 text-gray-900">Conocé tus Derechos Laborales</h1>
-    <p class="text-lg text-gray-700 mb-8 max-w-2xl mx-auto">
-        Accedé a información confiable sobre leyes laborales, contratos, licencias, despidos y más.  
-        Contenido verificado y asistente virtual especializado.
+    
+    <h1 class="text-display text-white mb-6 max-w-4xl mx-auto leading-tight">
+    Conocé tus <span class="text-highlight">Derechos Laborales</span> con Confianza
+</h1>
+    
+    <p class="text-body text-white/90 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Accedé a información <strong>verificada y actualizada</strong> sobre leyes laborales, contratos, licencias, despidos y más.  
+        Contenido desarrollado específicamente para <strong>trabajadores argentinos</strong>.
     </p>
-    <div class="flex flex-col sm:flex-row justify-center gap-4">
-        <a href="{{ route('chatbot') }}" class="btn-black inline-flex items-center justify-center">
-            🤖 Consultar al Asistente
+    
+    <div class="flex flex-col sm:flex-row justify-center gap-5">
+        <a href="{{ route('chatbot') }}" class="btn-modern text-lg">
+            <span>🤖 Consultar al Asistente IA</span>
         </a>
-        <a href="{{ route('contenido') }}" class="border border-gray-300 rounded-full px-6 py-3 font-semibold hover:bg-gray-100 transition inline-flex items-center justify-center">
-            📚 Ver Contenido Completo
+        <a href="{{ route('contenido') }}" class="btn-secondary text-lg">
+            <span>📚 Explorar Recursos Completos</span>
         </a>
     </div>
 </section>
 
-<!-- PANEL DE ACCESO RÁPIDO -->
-<section class="panel w-11/12 md:w-4/5 -mt-6 py-10 px-6 grid grid-cols-1 md:grid-cols-4 gap-6 mx-auto">
-    <div class="info-card cursor-pointer" onclick="location.href='{{ route('contenido') }}#guia-despido'">
-        <h3 class="text-xl font-semibold mb-2">🚨 Despidos</h3>
-        <p class="text-gray-600">Guía completa sobre indemnizaciones y pasos legales</p>
+<!-- PANEL DE ACCESO RÁPIDO MEJORADO -->
+<section class="w-11/12 md:w-4/5 -mt-8 py-12 px-6 grid grid-cols-1 md:grid-cols-4 gap-8 mx-auto fade-in">
+    <div class="professional-card cursor-pointer group" onclick="location.href='{{ route('contenido') }}#guia-despido'">
+        <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">🚨</div>
+        <h3 class="text-subheading text-high-contrast mb-3">Despidos e Indemnizaciones</h3>
+        <p class="text-body text-muted">Guía completa sobre cálculo, plazos legales y pasos inmediatos</p>
+        <div class="mt-4 text-small text-accent-color font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Ver guía completa →
+        </div>
     </div>
-    <div class="info-card cursor-pointer" onclick="location.href='{{ route('contenido') }}#guia-accidente'">
-        <h3 class="text-xl font-semibold mb-2">🚑 Accidentes</h3>
-        <p class="text-gray-600">Procedimiento ART y cobertura médica laboral</p>
+
+    <div class="professional-card cursor-pointer group" onclick="location.href='{{ route('contenido') }}#guia-accidente'">
+        <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">🚑</div>
+        <h3 class="text-subheading text-high-contrast mb-3">Accidentes Laborales</h3>
+        <p class="text-body text-muted">Procedimiento ART, cobertura médica y denuncias en SRT</p>
+        <div class="mt-4 text-small text-accent-color font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Ver procedimiento →
+        </div>
     </div>
-    <div class="info-card cursor-pointer" onclick="location.href='{{ route('contenido') }}#guia-denuncia'">
-        <h3 class="text-xl font-semibold mb-2">⚖️ Denuncias</h3>
-        <p class="text-gray-600">Cómo reclamar tus derechos en el ministerio</p>
+
+    <div class="professional-card cursor-pointer group" onclick="location.href='{{ route('contenido') }}#guia-denuncia'">
+        <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">⚖️</div>
+        <h3 class="text-subheading text-high-contrast mb-3">Denuncias Laborales</h3>
+        <p class="text-body text-muted">Cómo reclamar tus derechos ante el ministerio paso a paso</p>
+        <div class="mt-4 text-small text-accent-color font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Aprender a denunciar →
+        </div>
     </div>
-    <div class="info-card cursor-pointer" onclick="location.href='{{ route('directorio') }}'">
-        <h3 class="text-xl font-semibold mb-2">🏛️ Directorio</h3>
-        <p class="text-gray-600">Contactos oficiales de todos los ministerios</p>
+
+    <div class="professional-card cursor-pointer group" onclick="location.href='{{ route('directorio') }}'">
+        <div class="text-3xl mb-4 group-hover:scale-110 transition-transform duration-300">🏛️</div>
+        <h3 class="text-subheading text-high-contrast mb-3">Directorio Oficial</h3>
+        <p class="text-body text-muted">Contactos verificados de todos los ministerios provinciales</p>
+        <div class="mt-4 text-small text-accent-color font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+            Buscar contactos →
+        </div>
     </div>
 </section>
 
-<!-- SECCIÓN INFORMATIVA MEJORADA -->
-<section class="mt-16 w-full bg-white py-16">
-    <div class="w-11/12 md:w-3/4 mx-auto">
-        <h2 class="text-3xl font-bold mb-4 text-center">Recursos Destacados</h2>
-        <p class="text-gray-600 mb-10 text-center max-w-2xl mx-auto">
-            Contenido práctico y accesible desarrollado específicamente para trabajadores argentinos
+<!-- SECCIÓN DE RECURSOS DESTACADOS MEJORADA -->
+<section class="mt-20 w-full bg-transparent py-16 fade-in">
+    <div class="w-11/12 md:w-3/4 mx-auto text-center">
+        <h2 class="text-heading text-high-contrast mb-4">Recursos <span class="text-important">Destacados</span></h2>
+        <p class="text-body text-muted mb-12 max-w-2xl mx-auto leading-relaxed">
+            Contenido práctico y accesible desarrollado específicamente para 
+            <strong>trabajadores argentinos</strong> con información <strong>100% verificada</strong>
         </p>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <!-- Tarjeta 1: Guías Prácticas -->
-            <div class="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <div class="text-2xl mb-3">📋</div>
-                <h3 class="font-semibold text-lg mb-3">Guías Paso a Paso</h3>
-                <ul class="space-y-2 text-gray-600">
-                    <li>• Despido laboral e indemnización</li>
-                    <li>• Accidentes y procedimiento ART</li>
-                    <li>• Denuncias en ministerio</li>
-                    <li>• Horas extras no pagas</li>
+            <div class="professional-card group">
+                <div class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300">📋</div>
+                <h3 class="text-subheading text-high-contrast mb-4">Guías Paso a Paso</h3>
+                <ul class="space-y-3 text-body text-muted mb-6">
+                    <li class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-accent-color rounded-full"></div>
+                        <span>Despido laboral e indemnización</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-success-color rounded-full"></div>
+                        <span>Accidentes y procedimiento ART</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-warning-color rounded-full"></div>
+                        <span>Denuncias en ministerio</span>
+                    </li>
+                    <li class="flex items-center gap-3">
+                        <div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+                        <span>Horas extras no pagas</span>
+                    </li>
                 </ul>
-                <a href="{{ route('contenido') }}" class="mt-4 inline-block text-blue-600 font-semibold hover:text-blue-800">
-                    Ver todas las guías →
+                <a href="{{ route('contenido') }}" class="inline-flex items-center gap-2 text-body font-semibold text-accent-color hover:gap-3 transition-all duration-300">
+                    <span>Explorar todas las guías</span>
+                    <span>→</span>
                 </a>
             </div>
 
             <!-- Tarjeta 2: Asistente Virtual -->
-            <div class="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <div class="text-2xl mb-3">🤖</div>
-                <h3 class="font-semibold text-lg mb-3">Asistente Legal IA</h3>
-                <p class="text-gray-600 mb-4">
-                    Consultá dudas específicas y recibí respuestas inmediatas basadas en la legislación laboral argentina.
+            <div class="professional-card group">
+                <div class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300">🤖</div>
+                <h3 class="text-subheading text-high-contrast mb-4">Asistente Legal IA</h3>
+                <p class="text-body text-muted mb-6 leading-relaxed">
+                    Consultá dudas específicas y recibí respuestas <strong>inmediatas y precisas</strong> 
+                    basadas en la legislación laboral argentina actualizada.
                 </p>
-                <a href="{{ route('chatbot') }}" class="mt-2 inline-block text-blue-600 font-semibold hover:text-blue-800">
-                    Chatear ahora →
+                <a href="{{ route('chatbot') }}" class="inline-flex items-center gap-2 text-body font-semibold text-accent-color hover:gap-3 transition-all duration-300">
+                    <span>Iniciar conversación</span>
+                    <span>→</span>
                 </a>
             </div>
 
             <!-- Tarjeta 3: Directorio Oficial -->
-            <div class="border border-gray-200 rounded-xl p-6 shadow-sm hover:shadow-md transition">
-                <div class="text-2xl mb-3">🏛️</div>
-                <h3 class="font-semibold text-lg mb-3">Directorio Nacional</h3>
-                <p class="text-gray-600 mb-4">
-                    Accedé a contactos oficiales de todos los ministerios de trabajo provinciales y nacional.
+            <div class="professional-card group">
+                <div class="text-4xl mb-5 group-hover:scale-110 transition-transform duration-300">🏛️</div>
+                <h3 class="text-subheading text-high-contrast mb-4">Directorio Nacional</h3>
+                <p class="text-body text-muted mb-6 leading-relaxed">
+                    Accedé a <strong>contactos oficiales verificados</strong> de todos los ministerios 
+                    de trabajo provinciales y nacional. Información actualizada 2025.
                 </p>
-                <a href="{{ route('directorio') }}" class="mt-2 inline-block text-blue-600 font-semibold hover:text-blue-800">
-                    Buscar contacto →
+                <a href="{{ route('directorio') }}" class="inline-flex items-center gap-2 text-body font-semibold text-accent-color hover:gap-3 transition-all duration-300">
+                    <span>Buscar por provincia</span>
+                    <span>→</span>
                 </a>
             </div>
         </div>
     </div>
 </section>
 
-<!-- ESTADÍSTICAS O DATOS ÚTILES -->
-<section class="w-full py-16 bg-gray-50">
+<!-- ESTADÍSTICAS MEJORADAS -->
+<section class="w-full py-20 bg-gradient-to-br from-white/50 to-gray-50/30 backdrop-blur-sm fade-in">
     <div class="w-11/12 md:w-3/4 mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-12">Información Confiable y Actualizada</h2>
+        <h2 class="text-heading text-high-contrast mb-12">Información <span class="text-important">Confiable</span> y Actualizada</h2>
         
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-            <div>
-                <div class="text-2xl font-bold text-blue-600 mb-2">16+</div>
-                <div class="text-gray-600">Provincias</div>
-                <div class="text-sm text-gray-500">En directorio oficial</div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-10">
+            <div class="professional-card text-center !py-8">
+                <div class="text-display text-accent-color mb-2">16+</div>
+                <div class="text-subheading text-high-contrast mb-1">Provincias</div>
+                <div class="text-small text-muted">En directorio oficial verificado</div>
             </div>
-            <div>
-                <div class="text-2xl font-bold text-green-600 mb-2">4</div>
-                <div class="text-gray-600">Guías prácticas</div>
-                <div class="text-sm text-gray-500">Completas y detalladas</div>
+            <div class="professional-card text-center !py-8">
+                <div class="text-display text-success-color mb-2">4</div>
+                <div class="text-subheading text-high-contrast mb-1">Guías Prácticas</div>
+                <div class="text-small text-muted">Completas y detalladas</div>
             </div>
-            <div>
-                <div class="text-2xl font-bold text-purple-600 mb-2">24/7</div>
-                <div class="text-gray-600">Asistente virtual</div>
-                <div class="text-sm text-gray-500">Disponible siempre</div>
+            <div class="professional-card text-center !py-8">
+                <div class="text-display text-warning-color mb-2">24/7</div>
+                <div class="text-subheading text-high-contrast mb-1">Asistente Virtual</div>
+                <div class="text-small text-muted">Disponible siempre que lo necesites</div>
             </div>
-            <div>
-                <div class="text-2xl font-bold text-orange-600 mb-2">100%</div>
-                <div class="text-gray-600">Gratuito</div>
-                <div class="text-sm text-gray-500">Acceso libre</div>
+            <div class="professional-card text-center !py-8">
+                <div class="text-display text-purple-600 mb-2">100%</div>
+                <div class="text-subheading text-high-contrast mb-1">Gratuito</div>
+                <div class="text-small text-muted">Acceso libre y sin restricciones</div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- LLAMADA A LA ACCIÓN FINAL -->
-<section class="w-full py-16 bg-white">
+<!-- LLAMADA A LA ACCIÓN FINAL MEJORADA -->
+<section class="w-full py-20 bg-white fade-in">
     <div class="w-11/12 md:w-2/3 mx-auto text-center">
-        <h2 class="text-3xl font-bold mb-4">¿Tenés una consulta específica?</h2>
-        <p class="text-gray-600 mb-8 text-lg">
-            Nuestro equipo virtual está listo para ayudarte con cualquier duda sobre derechos laborales
+        <h2 class="text-heading text-high-contrast mb-4">¿Tenés una <span class="text-important">consulta específica</span>?</h2>
+        <p class="text-body text-muted mb-10 max-w-2xl mx-auto leading-relaxed">
+            Nuestro <strong>asistente virtual especializado</strong> está listo para ayudarte con cualquier duda 
+            sobre derechos laborales, contratos, despidos, licencias y más.
         </p>
-        <div class="flex flex-col sm:flex-row justify-center gap-4">
-            <a href="{{ route('chatbot') }}" class="btn-black text-lg px-8 py-4">
-                🗨️ Iniciar Consulta con el Asistente
+        <div class="flex flex-col sm:flex-row justify-center gap-6">
+            <a href="{{ route('chatbot') }}" class="btn-modern text-lg px-10 py-5">
+                <span>🗨️ Iniciar Consulta con el Asistente IA</span>
             </a>
-            <a href="{{ route('contacto') }}" class="border-2 border-gray-800 rounded-full px-8 py-4 font-semibold hover:bg-gray-800 hover:text-white transition text-lg">
-                📞 Contacto Personalizado
+            <a href="{{ route('contacto') }}" class="btn-secondary text-lg px-10 py-5">
+                <span>📞 Contacto Personalizado</span>
             </a>
+        </div>
+        
+        <div class="mt-12 pt-8 border-t border-gray-100">
+            <p class="text-small text-muted">
+                ¿Preferís explorar por tu cuenta? 
+                <a href="{{ route('contenido') }}" class="font-semibold text-accent-color hover:underline">
+                    Ver todos los recursos disponibles
+                </a>
+            </p>
         </div>
     </div>
 </section>
+@endsection
+
+@section('scripts')
+<script>
+    // Animaciones adicionales para la home
+    document.addEventListener('DOMContentLoaded', function() {
+        // Efecto de escritura para elementos importantes
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationDelay = '0.2s';
+                    entry.target.classList.add('animate-fade-in-up');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('.professional-card').forEach(card => {
+            observer.observe(card);
+        });
+    });
+</script>
+
+<style>
+    .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+    }
+
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .text-muted {
+        color: var(--text-muted);
+    }
+
+    .text-accent-color {
+        color: var(--accent-color);
+    }
+
+    .text-success-color {
+        color: var(--success-color);
+    }
+
+    .text-warning-color {
+        color: var(--warning-color);
+    }
+
+    .text-highlight {
+    background: linear-gradient(135deg, #fbbf24, #f59e0b, #d97706);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-weight: 800;
+    text-shadow: 0 2px 10px rgba(245, 158, 11, 0.3);
+}
+</style>
 @endsection
